@@ -22,8 +22,8 @@ test('a clean checkout builds a complete Pages artifact including assets and bot
   await assert.rejects(access(join(temporary, 'dist')));
   await run(process.execPath, [join(temporary, 'scripts/build.mjs')]);
   const output = join(temporary, 'dist');
-  for (const asset of ['style.css', 'app.js', 'hero-drug.svg', 'icon.svg', '.nojekyll']) {
-    assert.equal(await readFile(join(output, asset), 'utf8'), await readFile(new URL(`public/${asset}`, project), 'utf8'));
+  for (const asset of ['style.css', 'app.js', 'hero-drug.svg', 'icon.svg', '.nojekyll', 'social-card-v1.jpg']) {
+    assert.deepEqual(await readFile(join(output, asset)), await readFile(new URL(`public/${asset}`, project)));
   }
   assert.equal((await readFile(join(output, 'CNAME'), 'utf8')).trim(), 'arewecured.com');
   const html = await readFile(join(output, 'index.html'), 'utf8');

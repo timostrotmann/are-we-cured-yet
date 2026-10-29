@@ -194,3 +194,9 @@ Official references: [GitHub custom-domain setup](https://docs.github.com/en/pag
 ## Frontend assets
 
 Edit the layout in `src/index.template.html` and CSS, JavaScript, or SVGs in `public/`. Asset and download links are relative, so the site works both under a repository path and at the root of a custom domain. Navigation supports keyboard use and a mobile hamburger menu. Google Fonts is currently loaded through an external stylesheet with system-font fallbacks.
+
+## Link previews on X and Facebook
+
+The static HTML head includes Open Graph and X Card metadata, using the canonical URL `https://arewecured.com/`, account `@AreWeCuredYet`, and an absolute HTTPS image URL. The card image is `public/social-card-v1.jpg` (1200 × 630). Both metadata and artwork are available without JavaScript.
+
+The editable artwork is `src/social-card.html`; it reuses the website CSS and capsule illustration. Serve the repository locally, open that file in a browser, wait for its fonts and image to load, and export the 1200 × 630 artwork area as a JPEG. Update the public image and metadata together. Use a new versioned image filename when replacing the artwork so crawlers can fetch the new asset.

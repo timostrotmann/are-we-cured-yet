@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Are We Cured Yet? — Social card artwork</title>
+  <link rel="stylesheet" href="../public/style.css?v=analogue-1">
+  <style>
+    html, body { width: 1200px; height: 630px; overflow: hidden; }
+    body { position: relative; }
+    .card { position: relative; width: 100%; height: 100%; padding: 48px 62px; }
+    .rule { position: absolute; left: 62px; right: 62px; height: 1px; background: var(--ink); }
+    .rule.top { top: 102px; }
+    .rule.bottom { bottom: 90px; }
+    .card-brand { font: 700 28px/1.2 var(--display); letter-spacing: -1.2px; }
+    .card-brand span { color: var(--accent); }
+    .card-copy { position: absolute; left: 62px; top: 172px; width: 640px; }
+    .card-title { margin: 0; font: 700 88px/1.04 var(--display); letter-spacing: -.06em; }
+    .card-title em { color: var(--accent); font-style: normal; }
+    .card-tagline { margin: 28px 0 0; font: 400 17px/1.6 var(--mono); letter-spacing: .7px; }
+    .card-art { position: absolute; right: 39px; top: 138px; width: 420px; height: auto; }
+    .card-footer { position: absolute; left: 62px; right: 62px; bottom: 44px; display: flex; justify-content: space-between; font: 400 14px/1.5 var(--mono); letter-spacing: 1px; }
+    .card-footer span:last-child { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="card-brand">Are We Cured Yet<span>?</span></div>
+    <div class="rule top"></div>
+    <div class="card-copy">
+      <h1 class="card-title">ARE WE<br>CURED <em>YET?</em></h1>
+      <p class="card-tagline">BIG PROMISES. REAL PROGRESS?</p>
+    </div>
+    <img class="card-art" src="../public/hero-drug.svg" alt="" width="480" height="420">
+    <div class="rule bottom"></div>
+    <div class="card-footer"><span>AREWECURED.COM</span><span>AI × BIO</span></div>
+  </main>
+</body>
+</html>
