@@ -1,65 +1,50 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 420" fill="none">
   <defs>
-    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
-      <circle cx="10" cy="10" r="1.2" fill="#b6b9af"/>
+    <pattern id="engraving" width="5" height="5" patternUnits="userSpaceOnUse">
+      <path d="M0 4.5h5" stroke="#292927" stroke-width=".6" opacity=".5"/>
     </pattern>
-    <linearGradient id="shell" x1="175" y1="143" x2="175" y2="259" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#fffdf5"/>
-      <stop offset=".52" stop-color="#f0eadd"/>
-      <stop offset="1" stop-color="#d9d7c8"/>
-    </linearGradient>
-    <linearGradient id="cap" x1="300" y1="143" x2="300" y2="259" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ffd0a1"/>
-      <stop offset=".37" stop-color="#f28a5b"/>
-      <stop offset=".72" stop-color="#e97046"/>
-      <stop offset="1" stop-color="#cb512f"/>
-    </linearGradient>
-    <clipPath id="capsule">
-      <rect x="108" y="143" width="260" height="116" rx="58"/>
-    </clipPath>
+    <pattern id="ticks" width="10" height="12" patternUnits="userSpaceOnUse">
+      <path d="M.5 0v5" stroke="#aaa69d" stroke-width=".7"/>
+    </pattern>
+    <clipPath id="capsule"><rect x="89" y="147" width="302" height="126" rx="63"/></clipPath>
   </defs>
 
-  <rect x="10" y="10" width="460" height="380" fill="url(#dots)"/>
-  <g stroke="#aaa99c" stroke-width="1">
-    <ellipse cx="238" cy="201" rx="180" ry="100" transform="rotate(-35 238 201)"/>
-    <ellipse cx="238" cy="201" rx="170" ry="94" transform="rotate(35 238 201)"/>
-    <ellipse cx="238" cy="201" rx="97" ry="168"/>
+  <g stroke="#aaa69d" stroke-width=".7">
+    <path d="M18 44h444M18 48v-8m444 8v-8M18 364h444"/>
+    <circle cx="240" cy="210" r="153"/>
+    <path d="M240 44v332M62 210h356" stroke-dasharray="2 6"/>
+    <path d="M87 203v14m306-14v14M233 57h14m-14 306h14" stroke="#292927"/>
   </g>
+  <path d="M18 45h444v12H18zM18 353h444v12H18z" fill="url(#ticks)"/>
+  <path d="M326 35v18" stroke="#b83c34" stroke-width="2"/>
+  <path d="M154 355v18" stroke="#b83c34" stroke-width="2"/>
 
-  <g transform="rotate(-35 238 201)">
-    <rect x="108" y="143" width="260" height="116" rx="58" fill="url(#shell)" stroke="#bbb9a9" stroke-width=".8"/>
+  <g transform="rotate(-32 240 210)">
+    <rect x="89" y="147" width="302" height="126" rx="63" fill="#eeece4"/>
     <g clip-path="url(#capsule)">
-      <g stroke="#bd7555" stroke-width="1.2" opacity=".6">
-        <path d="m143 198 25-17 25 18 22-14m-47-4 5 39 28 9m-8-30 8 30 23-12"/>
+      <path d="M89 147h151v126H89z" fill="url(#engraving)"/>
+      <path d="M240 147h88a63 63 0 0 1 0 126h-88z" fill="#b83c34"/>
+      <path d="M240 147v126" stroke="#292927"/>
+      <path d="M247 150v120" stroke="#eeece4" stroke-width=".8" opacity=".8"/>
+      <path d="M262 158h58a51 51 0 0 1 45 24" stroke="#eeece4" stroke-width="1" opacity=".8"/>
+      <g fill="#eeece4" stroke="#292927" stroke-width="1.2">
+        <circle cx="136" cy="208" r="5"/><circle cx="168" cy="190" r="7"/>
+        <circle cx="195" cy="214" r="6"/><circle cx="165" cy="238" r="5"/>
       </g>
-      <g fill="#c36c48">
-        <circle cx="143" cy="198" r="5" opacity=".75"/>
-        <circle cx="168" cy="181" r="7" opacity=".65"/>
-        <circle cx="193" cy="199" r="6" opacity=".8"/>
-        <circle cx="215" cy="185" r="4" opacity=".6"/>
-        <circle cx="173" cy="220" r="4" opacity=".55"/>
-        <circle cx="201" cy="229" r="7" opacity=".65"/>
-        <circle cx="224" cy="217" r="4" opacity=".7"/>
-      </g>
-      <path d="M238 143h72a58 58 0 0 1 0 116h-72Z" fill="url(#cap)"/>
-      <path d="M238 144v114" stroke="#ad4b30" stroke-opacity=".35" stroke-width="1"/>
-      <path d="M242 145v111" stroke="#ffd6b2" stroke-opacity=".5" stroke-width="2"/>
-      <path d="M129 180c8-17 21-25 39-25h55" stroke="#fffef7" stroke-opacity=".8" stroke-width="5" stroke-linecap="round"/>
-      <path d="M253 156h52c15 0 27 5 35 15" stroke="#ffe1c3" stroke-opacity=".65" stroke-width="5" stroke-linecap="round"/>
-      <path d="M159 246h65" stroke="#a7aa99" stroke-opacity=".2" stroke-width="1"/>
+      <path d="m141 205 21-12m12 1 17 16m-27 21 3-34m4 38 19-17" stroke="#292927" stroke-width="1.2"/>
     </g>
+    <rect x="89" y="147" width="302" height="126" rx="63" stroke="#292927" stroke-width="1.4"/>
+    <path d="M90 297h300m-300-5v10m300-10v10" stroke="#aaa69d" stroke-width=".8"/>
   </g>
 
-  <g fill="#f5f4ee" stroke="#282d26" stroke-width="2">
-    <circle cx="89" cy="116" r="8"/>
-    <circle cx="379" cy="113" r="8"/>
-    <circle cx="238" cy="369" r="8"/>
+  <g stroke="#292927" stroke-width=".8">
+    <path d="M285 249h147v59"/>
+    <circle cx="285" cy="249" r="3" fill="#292927"/>
   </g>
-  <path d="M274 249h158v59" stroke="#7b8073"/>
-  <circle cx="274" cy="249" r="4" fill="#282d26"/>
-  <g fill="#5a6055" font-family="monospace">
-    <text x="332" y="329" font-size="11">DRUG CANDIDATE</text>
-    <text x="28" y="33" font-size="11">AI × DRUG DISCOVERY</text>
-    <text x="28" y="390" font-size="10">DISCOVER → DESIGN → VERIFY</text>
+  <g fill="#66645e" font-family="'Courier New',monospace">
+    <text x="18" y="26" font-size="10" letter-spacing="1.1">AI × DRUG DISCOVERY</text>
+    <text x="329" y="329" font-size="10" letter-spacing=".2">DRUG CANDIDATE</text>
+    <text x="18" y="393" font-size="9" letter-spacing=".8">DISCOVER → DESIGN → VERIFY</text>
   </g>
+  <path d="M438 386h24m-12-12v24" stroke="#b83c34" stroke-width=".8"/>
 </svg>
