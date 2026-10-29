@@ -2,8 +2,8 @@
 
 An English-language, evidence-based tracker of **approved AI-designed drugs** and **diseases cured with AI**, with a separate research news section.
 
-- Planned production domain: **https://arewecuredyet.ai**
-- GitHub Pages address while the domain is being registered: **https://timostrotmann.github.io/are-we-cured-yet/**
+- Production domain: **https://arewecured.com**
+- GitHub Pages project address: **https://timostrotmann.github.io/are-we-cured-yet/**
 - Source repository: **https://github.com/timostrotmann/are-we-cured-yet**
 
 The site is static. A small Node.js build generates HTML, counters, and JSON downloads. It needs no backend, database, API keys, or npm dependencies. GitHub Actions tests and rebuilds the site after changes to `main`.
@@ -165,14 +165,12 @@ The workflow in `.github/workflows/pages.yml` runs on pushes to `main`, pull req
 
 If deployment fails, open the repository's **Actions** tab and read the failing step. Invalid data prevents publication and leaves the previous deployment in place.
 
-## Connect AreWeCuredYet.ai after registering it
+## Domain and DNS: arewecured.com at IONOS
 
-The intended final domain is **arewecuredyet.ai**. The domain was not yet registered when this migration was prepared. The provisional GitHub Pages address is used until registration and DNS setup are complete.
+The primary website domain is **arewecured.com**. GitHub Pages hosts the website; IONOS manages the domain, DNS, and email. The old planned `.ai` domain is no longer the deployment target.
 
-1. Register the domain with your chosen registrar.
-2. In your GitHub account settings under **Pages**, add and verify the domain using the DNS TXT record GitHub supplies. Its value is account-specific; copy it from GitHub.
-3. In this repository's **Settings → Pages → Custom domain**, enter `arewecuredyet.ai` and save it **before** pointing DNS at Pages.
-4. At the DNS provider, add these apex records:
+1. Set this repository's **Settings → Pages → Custom domain** to `arewecured.com` before pointing DNS at GitHub Pages. The publishing source remains **GitHub Actions**.
+2. In IONOS, open **Domains & SSL → arewecured.com → DNS**. Replace the previous website A/AAAA values with these GitHub Pages records and add the `www` CNAME:
 
    | Type | Name | Value |
    | --- | --- | --- |
@@ -180,15 +178,18 @@ The intended final domain is **arewecuredyet.ai**. The domain was not yet regist
    | A | `@` | `185.199.109.153` |
    | A | `@` | `185.199.110.153` |
    | A | `@` | `185.199.111.153` |
+   | AAAA | `@` | `2606:50c0:8000::153` |
+   | AAAA | `@` | `2606:50c0:8001::153` |
+   | AAAA | `@` | `2606:50c0:8002::153` |
+   | AAAA | `@` | `2606:50c0:8003::153` |
+   | CNAME | `www` | `timostrotmann.github.io` |
 
-   Alternatively, if the provider supports apex ALIAS or ANAME records, point `@` at `timostrotmann.github.io`.
+3. Preserve IONOS nameservers and all email records, including MX, SPF, DKIM, DMARC and autodiscover. This keeps email, including `hello@arewecured.com`, separate from website hosting. Use individual DNS edits rather than resetting the entire domain.
+4. Wait for DNS propagation and GitHub's certificate provisioning. Enable **Enforce HTTPS** when the certificate is available, then verify both `https://arewecured.com` and `https://www.arewecured.com`. GitHub redirects `www` to the primary domain.
 
-5. For the optional `www` variant, add `CNAME` name `www`, value `timostrotmann.github.io`. Do not include the repository path in DNS values.
-6. Wait for the GitHub DNS check and certificate provisioning, then enable **Enforce HTTPS** and verify `https://arewecuredyet.ai`.
+`public/CNAME` documents the intended domain and is copied into `dist/`. With this Actions-based deployment, that file alone does not configure the custom domain: the repository Pages setting controls it. Recommended additional protection: verify the domain under your GitHub account's **Settings → Pages** using the account-specific TXT record GitHub supplies.
 
-`public/CNAME` already contains the target domain and is copied into the deployment artifact. **With an Actions-based Pages deployment, this file alone does not configure the custom domain; GitHub's Pages settings and the DNS records are required.** Keep the GitHub Pages address active until the domain is ready. Domain names are case-insensitive; `AreWeCuredYet.ai` and `arewecuredyet.ai` identify the same domain.
-
-Official references: [Pages workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages), [custom-domain setup](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site), [domain verification](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages).
+Official references: [GitHub custom-domain setup](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site), [domain verification](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages), [IONOS A/AAAA records](https://www.ionos.de/hilfe/domains/ip-adresse-konfigurieren/domain-mit-statischer-ip-adresse-verbinden/).
 
 ## Frontend assets
 

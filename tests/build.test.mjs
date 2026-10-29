@@ -25,7 +25,7 @@ test('a clean checkout builds a complete Pages artifact including assets and bot
   for (const asset of ['style.css', 'app.js', 'hero-drug.svg', 'icon.svg', '.nojekyll']) {
     assert.equal(await readFile(join(output, asset), 'utf8'), await readFile(new URL(`public/${asset}`, project), 'utf8'));
   }
-  assert.equal((await readFile(join(output, 'CNAME'), 'utf8')).trim(), 'arewecuredyet.ai');
+  assert.equal((await readFile(join(output, 'CNAME'), 'utf8')).trim(), 'arewecured.com');
   const html = await readFile(join(output, 'index.html'), 'utf8');
   assert.doesNotMatch(html, /\{\{[A-Z_]+\}\}/);
   for (const match of html.matchAll(/(?:href|src)="([^"#][^"]*)"/g)) {
