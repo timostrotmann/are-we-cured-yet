@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Are We Cured Yet? — Tracking medicine, measuring progress</title>
+  <meta name="description" content="An evidence-led snapshot of diseases cured and approved medicines with a documented role for artificial intelligence. Every count comes with context and sources.">
+  <meta name="theme-color" content="#f5f4ee">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css?v=section-titles-2">
+  <script src="app.js?v=two-datasets-1" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="shell">
+  <a class="brand" href="#" aria-label="Are We Cured Yet? home"><span>Are We Cured Yet<span class="brand-question">?</span></span></a>
+  <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation" hidden><span class="menu-bars" aria-hidden="true"><span></span><span></span><span></span></span></button>
+  <nav id="primary-navigation" aria-label="Main navigation"><a href="#tracker">The numbers</a><a href="#evidence">Approved drugs</a><a href="#news">News</a><a href="#methodology">How we count</a></nav>
+</header>
+<main id="main">
+<section class="hero shell">
+  <div class="hero-copy"><h1>Big promises.<br>Real <em>progress?</em></h1><p class="intro">AI is beginning to revolutionize medicine. We track what has actually reached patients — one verified milestone at a time.</p><a class="button" href="#tracker">Explore the numbers <span aria-hidden="true">↓</span></a></div>
+  <div class="science-art" aria-hidden="true"><img src="hero-drug.svg" width="480" height="420" alt=""></div>
+</section>
+<section id="tracker" class="tracker shell">
+  <div class="section-bar"><h2 class="section-title"><span class="section-number">01 /</span> THE NUMBERS</h2><p class="date">Evidence reviewed <time datetime="{{REVIEWED_AT}}">{{REVIEWED_DATE_SHORT}}</time></p></div>
+  <div class="counters">
+    <article class="counter"><div class="number" id="cure-count">{{CURE_COUNT}}</div><h3>Diseases cured with AI</h3><a href="#methodology">What qualifies as a cure?</a></article>
+    <article class="counter orange"><div class="number" id="approved-count">{{APPROVED_COUNT}}</div><h3>Approved AI-designed drugs</h3><a href="#methodology">How we count drugs</a></article>
+  </div>
+</section>
+<section id="evidence" class="evidence shell">
+  <div class="section-bar"><h2 class="section-title"><span class="section-number">02 /</span> APPROVED DRUGS</h2><span class="mono">FOLLOW THE EVIDENCE</span></div>
+  <p class="section-intro">Verified approvals and their supporting sources.<br>Only these records contribute to the counters.</p>
+  <div class="evidence-tools"><p id="record-count" class="mono">{{RECORD_COUNT_TEXT}}</p></div>
+{{EVIDENCE_RECORDS}}
+  <p id="evidence-empty" class="evidence-empty" role="status"{{EMPTY_HIDDEN}}>{{EMPTY_TEXT}}</p>
+  <p class="evidence-footnote">AI roles reported by developers are labeled as such. Regulatory approval is checked separately. This curated starting dataset is not an exhaustive pipeline.</p>
+</section>
+<section id="news" class="news shell">
+  <div class="section-bar"><h2 class="section-title"><span class="section-number">03 /</span> RESEARCH NEWS</h2><span class="mono">LATEST DEVELOPMENTS</span></div>
+  <p class="section-intro">A small selection of research and development updates.<br>News articles do not contribute to either counter.</p>
+{{NEWS_ARTICLES}}
+  <p class="news-empty"{{NEWS_EMPTY_HIDDEN}}>No research updates have been added yet.</p>
+  <p class="evidence-footnote">Company announcements are attributed to their source. A trial milestone does not establish approval or a cure.</p>
+</section>
+<section id="methodology" class="methodology"><div class="shell method-grid"><div><h2 class="section-title"><span class="section-number">04 /</span> OUR METHODOLOGY</h2><p class="method-intro">Medical progress is a team effort. We track newly discovered or designed AI-origin medicines. Repurposed drugs are excluded from the approved-drug dataset and both counters. Research updates are kept in a separate news dataset.</p></div><div class="definitions"><details open><summary><span>01</span> What counts as a cure?</summary><p>A disease counts only with clinical evidence of a durable curative outcome for a defined patient population and a documented AI role in a new treatment’s discovery or design. Repurposed drugs are excluded. Symptom relief, a promising experiment, remission alone, or an approval does not automatically qualify. Zero means no qualifying record in this dataset; it is not proof that AI has had no clinical benefit.</p></details><details><summary><span>02</span> What counts as an approved drug?</summary><p>We count distinct newly discovered or designed active substances with an FDA-approved therapeutic indication and a documented AI contribution to discovery or molecule design. Each substance counts once. Repurposed drugs — existing medicines identified for a new use — are excluded, even when AI helped identify that use. They are not included in the approved-drug dataset or either counter. Emergency authorization, trial clearance, and breakthrough designation do not count as marketing approval.</p></details><details><summary><span>03</span> What do the numbers cover?</summary><p>This is a curated dataset, not a global census. There is no single comprehensive, standardized “AI-created medicines” registry. Each counted example must have inspectable evidence. The counters are calculated from the qualifying entries in the current dataset. Research news is stored separately and never increases either counter. A treatment approval does not establish a cure.</p></details><details><summary><span>04</span> How current is this page?</summary><p>This is a static snapshot reviewed on {{REVIEWED_DATE_LONG}}, based on the linked evidence. Each approved-drug record and news article carries its own source-review date. The two datasets are maintained separately. It does not update automatically. Counts change only when the underlying records are reviewed and the page is republished. <a href="approved-drugs.json" download>Download approved drugs (JSON) ↗</a><a href="news.json" download>Download research news (JSON) ↗</a></p></details></div></div></section>
+</main>
+<footer class="shell"><a class="brand" href="#"><span>Are We Cured Yet<span class="brand-question">?</span></span></a><p>Evidence over hype. Human health at the center.</p><span>Educational information · Not medical advice</span></footer>
+</body></html>

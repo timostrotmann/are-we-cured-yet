@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 420" fill="none">
+  <defs>
+    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="1.2" fill="#b6b9af"/>
+    </pattern>
+    <linearGradient id="shell" x1="175" y1="143" x2="175" y2="259" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fffdf5"/>
+      <stop offset=".52" stop-color="#f0eadd"/>
+      <stop offset="1" stop-color="#d9d7c8"/>
+    </linearGradient>
+    <linearGradient id="cap" x1="300" y1="143" x2="300" y2="259" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffd0a1"/>
+      <stop offset=".37" stop-color="#f28a5b"/>
+      <stop offset=".72" stop-color="#e97046"/>
+      <stop offset="1" stop-color="#cb512f"/>
+    </linearGradient>
+    <clipPath id="capsule">
+      <rect x="108" y="143" width="260" height="116" rx="58"/>
+    </clipPath>
+  </defs>
+
+  <rect x="10" y="10" width="460" height="380" fill="url(#dots)"/>
+  <g stroke="#aaa99c" stroke-width="1">
+    <ellipse cx="238" cy="201" rx="180" ry="100" transform="rotate(-35 238 201)"/>
+    <ellipse cx="238" cy="201" rx="170" ry="94" transform="rotate(35 238 201)"/>
+    <ellipse cx="238" cy="201" rx="97" ry="168"/>
+  </g>
+
+  <g transform="rotate(-35 238 201)">
+    <rect x="108" y="143" width="260" height="116" rx="58" fill="url(#shell)" stroke="#bbb9a9" stroke-width=".8"/>
+    <g clip-path="url(#capsule)">
+      <g stroke="#bd7555" stroke-width="1.2" opacity=".6">
+        <path d="m143 198 25-17 25 18 22-14m-47-4 5 39 28 9m-8-30 8 30 23-12"/>
+      </g>
+      <g fill="#c36c48">
+        <circle cx="143" cy="198" r="5" opacity=".75"/>
+        <circle cx="168" cy="181" r="7" opacity=".65"/>
+        <circle cx="193" cy="199" r="6" opacity=".8"/>
+        <circle cx="215" cy="185" r="4" opacity=".6"/>
+        <circle cx="173" cy="220" r="4" opacity=".55"/>
+        <circle cx="201" cy="229" r="7" opacity=".65"/>
+        <circle cx="224" cy="217" r="4" opacity=".7"/>
+      </g>
+      <path d="M238 143h72a58 58 0 0 1 0 116h-72Z" fill="url(#cap)"/>
+      <path d="M238 144v114" stroke="#ad4b30" stroke-opacity=".35" stroke-width="1"/>
+      <path d="M242 145v111" stroke="#ffd6b2" stroke-opacity=".5" stroke-width="2"/>
+      <path d="M129 180c8-17 21-25 39-25h55" stroke="#fffef7" stroke-opacity=".8" stroke-width="5" stroke-linecap="round"/>
+      <path d="M253 156h52c15 0 27 5 35 15" stroke="#ffe1c3" stroke-opacity=".65" stroke-width="5" stroke-linecap="round"/>
+      <path d="M159 246h65" stroke="#a7aa99" stroke-opacity=".2" stroke-width="1"/>
+    </g>
+  </g>
+
+  <g fill="#f5f4ee" stroke="#282d26" stroke-width="2">
+    <circle cx="89" cy="116" r="8"/>
+    <circle cx="379" cy="113" r="8"/>
+    <circle cx="238" cy="369" r="8"/>
+  </g>
+  <path d="M274 249h158v59" stroke="#7b8073"/>
+  <circle cx="274" cy="249" r="4" fill="#282d26"/>
+  <g fill="#5a6055" font-family="monospace">
+    <text x="332" y="329" font-size="11">DRUG CANDIDATE</text>
+    <text x="28" y="33" font-size="11">AI × DRUG DISCOVERY</text>
+    <text x="28" y="390" font-size="10">DISCOVER → DESIGN → VERIFY</text>
+  </g>
+</svg>

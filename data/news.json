@@ -1,0 +1,28 @@
+{
+  "name": "Are We Cured Yet? — Research news",
+  "reviewed_at": "2026-10-28",
+  "coverage": "Curated research and development updates. News does not contribute to either counter. Company-reported claims are attributed to the developer.",
+  "articles": [
+    {
+      "id": "rentosertib-phase-iii-2026",
+      "published_at": "2026-07-07",
+      "reviewed_at": "2026-10-28",
+      "category": "Clinical trials",
+      "title": "Rentosertib moves into Phase III development",
+      "summary": "Insilico reports AI involvement in both target discovery and molecule design, and announced Phase III development in 2026.",
+      "context": "Rentosertib is investigational. This development update is not a marketing approval or evidence of a cure.",
+      "sources": [
+        {
+          "label": "Development update: developer report",
+          "kind": "developer",
+          "url": "https://insilico.com/news/xmjsn4l091-insilico-initiates-phase-iii-clinical-tr"
+        },
+        {
+          "label": "Trial registry",
+          "kind": "registry",
+          "url": "https://clinicaltrials.gov/study/NCT07687459"
+        }
+      ]
+    }
+  ]
+}
